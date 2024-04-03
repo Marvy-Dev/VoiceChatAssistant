@@ -1,0 +1,14 @@
+.inputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.formSubmitInput {
+  cursor: pointer;
+}
+
+.formSubmitInput:disabled {
+  background-color: slategrey;
+  cursor: default;
+  padding: 0.75rem;
+}
