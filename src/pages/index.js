@@ -18,7 +18,7 @@ export default function Home() {
   const sendRequest = (e) => {
     e.preventDefault()
     setIsLoading(true)
-    fetch(`http://18.191.226.230:8000/getAudio?prompt=${speechValue}`)
+    fetch(`https://audio-generator-api-26bd7e9ac21a.herokuapp.com/getAudio?prompt=${speechValue}`)
       .then(res => res.blob())
       .then((myBlob) => {
         const objectURL = URL.createObjectURL(myBlob);
