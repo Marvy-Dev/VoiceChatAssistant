@@ -3,12 +3,22 @@
   align-items: center;
 }
 
-.formSubmitInput {
+button {
   cursor: pointer;
 }
 
-.formSubmitInput:disabled {
+button:disabled {
   background-color: slategrey;
   cursor: default;
-  padding: 0.75rem;
+}
+
+button:disabled:hover {
+  background-color: slategrey;
+}
+
+.speechContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
 }
