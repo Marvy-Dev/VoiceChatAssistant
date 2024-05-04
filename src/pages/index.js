@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 
 import { AudioInput } from "@/components";
-const API_URL = "http://voiceasis.azurewebsites.net";
+const API_URL = "https://voiceasis.azurewebsites.net";
 // const API_URL = "http://localhost:5000";
 async function calculateSHA256(blob) {
   const buffer = await blob.arrayBuffer();
