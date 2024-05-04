@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 
 import { AudioInput } from "@/components";
-
+const API_URL = "http://voiceasis.azurewebsites.net";
+// const API_URL = "http://localhost:5000";
 async function calculateSHA256(blob) {
   const buffer = await blob.arrayBuffer();
   const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
@@ -48,7 +49,7 @@ export default function Home() {
     // formData.append('file', blob);
     // formData.append('hash', hash);
 
-    fetch("http://localhost:5000/myfile", {
+    fetch(`${API_URL}/myfile`, {
       // fetch("http://localhost:5000/showAudio", {
       method: 'POST',
       body: JSON.stringify(JSONtoSend),
@@ -84,7 +85,7 @@ export default function Home() {
     console.log('====================================');
     console.log('Sending request');
     console.log('====================================');
-    fetch(`http://localhost:5000/getAudio?prompt=${speechValue}`)
+    fetch(`${API_URL}/getAudio?prompt=${speechValue}`)
       .then(res => res.blob())
       .then((myBlob) => {
         const objectURL = URL.createObjectURL(myBlob);
